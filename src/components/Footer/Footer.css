@@ -1,0 +1,56 @@
+.f-wrapper {
+    background-color: black;
+    color: white; /* Optional: to ensure text is visible against the black background */
+}
+
+.f-container {
+    justify-content: space-between;
+    padding: 1rem; /* Optional: add padding for better spacing */
+}
+
+.text2{
+    font-size: 0.8rem;
+}
+.text3{
+    font-size: 1.2rem;
+}
+.f-left {
+    gap: 1rem;
+}
+.contact-info {
+  font-size: 1rem; /* Adjust font size as needed */
+}
+
+
+
+.f-menu {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    font-weight: 500;
+}
+
+.f-right .primaryText{
+    color: aliceblue;
+    font-weight: 600;
+
+}
+
+.f-right .secondaryText{
+    color: aliceblue;
+    font-weight: 600;
+
+}
+
+
+@media (max-width: 768px) {
+    .f-container {
+        justify-content: center;
+    }
+    .f-container > div {
+        align-items: center !important;
+        text-align: center;
+    }
+    .f-right {
+        justify-content: center;
+    }
+}

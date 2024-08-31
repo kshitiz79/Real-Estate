@@ -1,0 +1,29 @@
+.inner-container{
+    gap:1.3rem;
+    background-color: var(--primary);
+    padding: 2rem;
+    border-radius: 50px;
+    border: 1px black;
+    text-align: center;
+}
+.text{
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+.inner-container .primaryText{
+    color: aliceblue;
+    font-weight: 600;
+
+}
+
+.inner-container .secondaryText{
+    color: aliceblue;
+    font-weight: 600;
+
+}
+
+.inner-container .button{
+    border: 1px solid white ;
+    box-shadow: var(--shadow);
+    
+}

@@ -1,0 +1,109 @@
+/* src/components/FeaturedProperties/FeaturedProperties.css */
+@keyframes slideIn {
+  from {
+    transform: translateY(299px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(100);
+    opacity: 1;
+  }
+}
+
+
+
+.featured-properties {
+    text-align: center;
+  }
+  
+
+
+
+  .featured-properties .innerWidth {
+    padding: 2rem;
+  }
+  
+
+
+
+  .featured-properties .flexColStart {
+    margin-bottom: 2rem;
+  }
+  
+  .property-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens */
+    gap: 1rem;
+  }
+  .property-card {
+    border: 1px solid var(--secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 450px;
+    animation: slideIn 0.5s ease-in-out;
+    animation-delay: calc(0.5s * var(--card-index)); /* Add delay based on index */
+    opacity: 0;
+    animation-fill-mode: forwards; /* Ensure the animation stays in the final state */
+  }
+
+  .property-card img {
+    width: 100%;
+    height: 280px; /* Fixed height for images */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    border-radius: 8px; /* Apply border radius to images */
+    margin-bottom: 0.5rem; /* Space between image and text */
+  }
+  
+  .property-price {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem; /* Space between price and name */
+  }
+  
+  .property-card .primaryText {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem; /* Space between name and detail */
+  }
+  
+  .property-card .secondaryText {
+    color: var(--primary);
+    text-align: center;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1024px) {
+    .property-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .property-grid {
+      grid-template-columns: 1fr; /* 1 column for mobile screens */
+    }
+  
+    .property-card {
+      height: 400px; /* Adjust height for mobile screens as needed */
+      /* You can also use min-height if you want it to adjust based on content */
+      /* min-height: 300px; */
+    }
+  
+    .property-card img {
+      height: 210px; /* Adjust image height for mobile screens */
+    }
+  
+    .property-card .primaryText {
+      font-size: 1.25rem;
+    }
+  
+    .property-card .property-price {
+      font-size: 1rem;
+    }
+  }
+  

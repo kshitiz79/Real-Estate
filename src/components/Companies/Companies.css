@@ -1,0 +1,39 @@
+.c-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: wrap; /* Allow images to wrap */
+    align-items: center; /* Center images vertically */
+}
+
+/* Specific widths for each image */
+.c-container > img {
+    width: 13rem;
+}
+
+.c-container > img:nth-child(2) {
+    width: 10rem;
+}
+
+.c-container > img:nth-child(3) {
+    width: 12rem;
+}
+
+.c-container > img:nth-child(4) {
+    width: 10rem;
+}
+
+/* Media query for mobile view */
+@media (max-width: 640px) {
+    .c-container {
+        flex-direction: column; /* Stack images vertically */
+        justify-content: center; /* Center images horizontally */
+        align-items: center; /* Center images horizontally */
+        gap: 2rem; /* Increase gap for better spacing */
+    }
+
+    .c-container > img {
+        width: 80%; /* Adjust image size for mobile, keeping them responsive */
+        max-width: 13rem; /* Maintain reasonable max width */
+    }
+}

@@ -1,0 +1,132 @@
+.hero-wrapper {
+  color: white;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 2rem;
+  background: #290068;
+}
+
+.hero-container {
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+/* Left side */
+.hero-left {
+  gap: 3rem;
+}
+
+.hero-title {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title > h1 {
+  font-weight: 600;
+  font-size: 3.7rem;
+  line-height: 4rem;
+  color: aquamarine;
+}
+
+.orange-circle {
+  height: 4rem;
+  width: 4rem;
+  background: var(--orange-gradient);
+  position: absolute;
+  right: 28%;
+  top: -10%;
+  z-index: -1;
+  border-radius: 50%; /* Make it a circle */
+  clip-path: circle(50% at 50% 50%) inset(10% 20%);
+}
+
+.search-bar {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: 3px solid rgba(120, 120, 120, 0.374);
+  padding: 0.5rem 1rem;
+  width: 80%; /* Ensure it stays consistent */
+  max-width: 30rem; /* Limit the max width for larger screens */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+.search-bar > input {
+  flex: 1; /* Allow the input to take available space */
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  min-width: 0; /* Prevent the input from shrinking */
+}
+
+.stats {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.stat > :nth-child(1) {
+  font-size: 2rem;
+}
+
+.stat > :nth-child(1) > :last-child {
+  color: orange;
+}
+
+/* Right side */
+.image-container {
+  width: 35rem;
+  height: 35rem;
+  overflow: hidden;
+  border-radius: 50%; /* Ensure it remains a perfect circle */
+  border: 8px solid rgb(255, 199, 16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container without stretching */
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .image-container {
+    width: 25rem;
+    height: 25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-container {
+    margin-top: 2rem;
+  }
+
+  .hero-title > h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .image-container {
+    width: 18rem; /* Set a smaller size for mobile */
+    height: 18rem;
+    border-radius: 50%; /* Keep it circular */
+  }
+
+  .stats {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .stat > :nth-child(1) {
+    font-size: 1.5rem;
+  }
+
+  .stat > :nth-child(2) {
+    font-size: 0.8rem;
+  }
+}

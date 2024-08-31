@@ -1,0 +1,110 @@
+.c-container {
+    justify-content: space-between;
+  }
+  .c-container > div {
+    flex: 1;
+  }
+  .c-right {
+    width: 100%;
+  }
+  .c-left {
+    gap: 0.5rem;
+  }
+  .contactModes {
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+  .c-right .image-container2 {
+    width: 30rem;
+    height: 30rem;
+    overflow: hidden;
+    border-radius: 2%;
+    border: 8px solid rgb(95, 138, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the image */
+}
+    .image-container2>img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+  
+
+    .contactModes .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      width: 100%;
+  }
+  .mode {
+    width: 16rem;
+    padding: 1rem;
+    border: 0.8px solid rgba(128, 128, 128, 0.143);
+    border-radius: 5px;
+    gap: 1rem;
+    transition: all 300ms ease-in;
+  }
+  .mode .button {
+    width: 100%;
+    background: var(--lightBlue);
+    color: var(--blue);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .mode > :nth-child(1) {
+    width: 100%;
+    gap: 1.6rem;
+  }
+  .mode .detail .primaryText {
+    font-size: 1.1rem;
+    font-weight: 600;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis for long text */
+}
+
+.mode .detail .secondaryText {
+    font-size: 0.9rem;
+    color: #777;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+  
+  .mode:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow);
+}
+
+.mode .button:hover {
+    background: var(--blue-gradient);
+    color: white;
+    transform: scale(1);
+}
+  
+  
+  @media (max-width: 1024px) {
+    .contactModes {
+        flex-direction: column;
+    }
+    .row {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .mode {
+        width: 100%;
+        min-width: 90%; /* Ensure minimum width on small devices */
+    }
+}
+@media (max-width: 640px) {
+  .image-container2 {
+      width: 15rem; /* Adjust width for smaller screens */
+      height: 15rem; /* Keep height equal to make it square */
+      border-radius: 10px;
+       /* Optional: Adjust border radius */
+  }
+}

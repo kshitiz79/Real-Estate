@@ -1,0 +1,44 @@
+[
+  {
+    "name": "iThums 73",
+    "price": "starting from 1.5cr",
+    "detail": "Located at Sector 73, Noida, offering commercial spaces with state-of-the-art amenities.",
+    "link": "https://ithumworld.com/ithums-73/",
+    "image": "./r1.png"
+  },
+  {
+    "name": "Corenthum",
+    "price": "starting from 1.2cr",
+    "detail": "Exceptional office spaces at Sector 62, Noida, designed for business growth.",
+    "link": "https://www.thecorenthum.com/",
+    "image": "./sbtlCorenthum.png"
+  },
+  {
+    "name": "Princess Park",
+    "price": "starting from 1.8cr",
+    "detail": "Residential apartments located at Sector-6, Dwarka, New Delhi, offering modern amenities.",
+    "link": "https://www.bptp.com/project/detail/princess-park",
+    "image": "./princesspark.png"
+  },
+  {
+    "name": "Gulistan Residency",
+    "price": "starting from 1.7cr",
+    "detail": "Luxury apartments in Sector-13, Dwarka, New Delhi with excellent connectivity.",
+ 
+    "image": "./gulistan.png"
+  },
+  {
+    "name": "Solomon Heights",
+    "price": "starting from 1.6cr",
+    "detail": "Premium residential apartments located at Sector-19, Dwarka, New Delhi.",
+    "link": "https://ithumworld.com/solomon-heights/",
+    "image": "./solomon.png"
+  },
+  {
+    "name": "Sarve Satyam Apartments",
+    "price": "Starting from 1.6cr",
+    "detail": "Well-connected apartments in Sector-4, Dwarka, New Delhi with modern facilities.",
+    "link": "https://ithumworld.com/sarve-satyam-apartments/",
+    "image": "./sarve-satyam.png"
+  }
+]

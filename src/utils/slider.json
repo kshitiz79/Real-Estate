@@ -1,0 +1,51 @@
+[
+  {
+    "name": "iThums 73",
+    "price": "Starting From 1.5 Cr",
+    "detail": "Located at Sector 73, Noida, offers office spaces, food courts, and recreational centers.",
+    "link": "https://ithumworld.com/ithums-73/",
+    "image": "./r1.png"
+  },
+  {
+    "name": "Prateek Grand City",
+    "price": "Starting From 1.2 Cr",
+    "detail": "Residential project at Pratap Vihar, Ghaziabad with premium amenities.",
+    "link": "https://prateekgroup.com/prateekgroup1/pgc-pricelist-apr2024.pdf",
+    "image": "./r2.png"
+  },
+  {
+    "name": "I-Thums 62",
+    "price": "2230,99 per sq.ft.",
+    "detail": "Commercial and IT park located in Noida Sector-62, offering premium office spaces.",
+    "link": "https://www.ithumworld.com",
+    "image": "./iThums62.png"
+  },
+  {
+    "name": "The Sarayu™",
+    "price": "1.90 Cr ",
+    "detail": "Ayodhya’s premier 7-star land development near Shri Ram Janmabhoomi.",
+    "link": "https://www.thesarayu.com//",
+    "image": "./sarayu.jpg"
+  },
+  {
+    "name": "SBTL Corenthum",
+    "price": "20,000 per sq.ft.",
+    "detail": "Premium office and IT space located at Sector 62, Noida, offering world-class amenities.",
+    "link": "https://www.sbtlgroup.com",
+    "image": "./sbtlCorenthum.png"
+  },
+  {
+    "name": "21st MileStone Residency",
+    "price": "Starting From 1.1 Cr",
+    "detail": "Upcoming iconic religious site with modern amenities and international connectivity.",
+    "image": "./p1.png"
+  },
+  {
+    "name": "The Corenthum",
+    "price": "Available on request",
+    "detail": "IT and commercial hub at Noida's Sector 62 with excellent connectivity.",
+    "link": "https://www.corenthum.com",
+    "image": "./a1.png"
+  }
+
+]
