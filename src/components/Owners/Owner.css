@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* FounderSection.css */
+
+body {
+  font-family: 'Poppins', sans-serif; /* Apply the font to the entire body */
+}
+
+.founder-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px; /* Adjusted gap for responsiveness */
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.founder-card {
+  flex: 1 1 45%;
+  background: #290068;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 600px;
+  font-family: 'Poppins', sans-serif; /* Apply the font to the cards */
+  animation: slideIn 1s ease forwards;
+}
+
+/* Define the sliding animation */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Alternate sliding directions */
+.founder-card:nth-child(even) {
+  animation: slideInRight 1s ease forwards;
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.founder-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.founder-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+h3 {
+  margin: 10px 0 5px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff; /* Make the heading bold */
+}
+
+p {
+  color: #ffffff;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-weight: 300;
+  text-align: justify; /* Lighten the weight of the paragraph text */
+}
+
+h4 {
+  color: blanchedalmond;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Responsive adjustments for mobile, tablet, and desktop views */
+@media (max-width: 1024px) {
+  .founder-section {
+    gap: 20px; /* Reduced gap for tablets */
+  }
+
+  .founder-card {
+    flex: 1 1 48%; /* Adjust for tablets */
+    max-width: 450px;
+  }
+  h3 {
+    font-size: 0.8rem; /* Adjusted font size for smaller screens */
+  }
+
+  p {
+    font-size: 0.6rem; /* Adjusted text size for readability */
+  }
+}
+
+@media (max-width: 768px) {
+  .founder-section {
+    gap: 20px; /* Reduced gap for smaller screens */
+  }
+
+  .founder-card {
+    flex: 1 1 100%; /* Full-width cards on smaller screens */
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .founder-card {
+    padding: 15px; /* Less padding on very small screens */
+  }
+
+  h3 {
+    font-size: 1rem; /* Adjusted font size for smaller screens */
+  }
+
+  p {
+    font-size: 0.8rem; /* Adjusted text size for readability */
+  }
+}

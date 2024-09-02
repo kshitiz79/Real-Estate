@@ -22,9 +22,9 @@ const Header = () => {
     const name = form.name.value;
     const number = form.number.value;
     const requirement = form.requirement.value;
-    const message = `Name: ${name}%0ANumber: ${number}%0ARequirement: ${requirement}`;
+    const message = `Name: ${name} Number: ${number} Requirement: ${requirement}`;
 
-    window.open(`https://wa.me/8127520552?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/9873961111?text=${encodeURIComponent(message)}`, '_blank');
     setFormVisible(false);
   };
 
@@ -55,29 +55,35 @@ const Header = () => {
       </div>
 
       {formVisible && (
-        <div className="popup-form">
-          <OutsideClickHandler onOutsideClick={() => setFormVisible(false)}>
-            <div className="form-container">
-              <form onSubmit={handleFormSubmit}>
-                <h2>Contact Us</h2>
-                <label>
-                  Name:
-                  <input type="text" name="name" required />
-                </label>
-                <label>
-                  Number:
-                  <input type="text" name="number" required />
-                </label>
-                <label>
-                  Requirement:
-                  <textarea name="requirement" required></textarea>
-                </label>
-                <button type="submit">Submit</button>
-              </form>
-            </div>
-          </OutsideClickHandler>
-        </div>
-      )}
+  <div className="popup-form">
+    <OutsideClickHandler onOutsideClick={() => setFormVisible(false)}>
+      <div className="form-container">
+        <form onSubmit={handleFormSubmit}>
+          <h2>Contact Us</h2>
+          <label>
+            Name:
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Number:
+            <input type="text" name="number" required />
+          </label>
+          <label>
+            Requirement:
+            <select name="requirement" required>
+              <option value="">Select Flat Type</option>
+              <option value="1bhk">1BHK</option>
+              <option value="2bhk">2BHK</option>
+              <option value="3bhk">3BHK</option>
+              <option value="4bhk">4BHK</option>
+            </select>
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </OutsideClickHandler>
+  </div>
+)}
     </section>
   );
 };

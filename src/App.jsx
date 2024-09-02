@@ -6,7 +6,7 @@ import Contact from "./components/Contact/Contact";
 import Residencies from "./components/Residencies/Residencies";
 import FeaturedProperties from "./components/FeaturedProperties/FeaturedProperties";
 import Value from "./components/Value/Value";
-
+import Owner from "./components/Owners/Owner";
 import GetStarted from "./components/GetStarted/GetStarted";
 import Footer from "./components/Footer/Footer";
 function App() {
@@ -20,7 +20,10 @@ function App() {
 <Residencies/>
 <FeaturedProperties/>
 <Value/>
+<div class="sliding-background">
 
+  <Owner />
+</div>
 <GetStarted/>
 <Footer/>
     </div>

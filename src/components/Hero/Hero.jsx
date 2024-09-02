@@ -36,8 +36,8 @@ const Hero = () => {
             </motion.h1>
           </div>
           <div className="flexColStart hero-des">
-            <span>Find a variety of properties that suit you very easily</span>
-            <span>Forget all difficulties in finding a residence for you</span>
+            <span>Find a variety of properties that suit you with ease, </span>
+            <span>and forget all the difficulties of finding a residence.</span>
           </div>
           <div className="flexCenter search-bar">
             <HiLocationMarker color="var(--blue)" size={25} />
