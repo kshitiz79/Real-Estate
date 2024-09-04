@@ -23,7 +23,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 600px;
+  max-width: 660px;
   font-family: 'Poppins', sans-serif; /* Apply the font to the cards */
   animation: slideIn 1s ease forwards;
 }

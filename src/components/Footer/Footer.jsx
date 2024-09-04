@@ -16,9 +16,9 @@ const Footer = () => {
         </div>
        
         <div className="flexColStart f-right">
-          <span className="primaryText">Information</span>
-          <span className="secondaryText">Address:</span>
-          <span className="text2">B-720/721,<br/> Ithum Tower, Plot-A-40<br/>
+         
+          <span className="primaryText">Address:</span>
+          <span className="secondryText">B-720/721,<br/> Ithum Tower, Plot-A-40<br/>
           Sector-62, Noida, UP. 201301 </span>
        
 

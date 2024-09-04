@@ -1,0 +1,34 @@
+.call-button {
+    position: fixed;
+    right: 20px; /* Distance from the right side of the screen */
+    bottom: 100px; /* Distance from the bottom of the screen */
+    width: 50px; /* Width of the button */
+    height: 50px; /* Height of the button */
+    background-color: #7914d292; /* Button color */
+    color: rgb(227, 0, 0); /* Icon color */
+    border-radius: 50%; /* Makes the button circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    cursor: pointer;
+    z-index: 1000; /* Ensures the button is above other elements */
+    transition: background-color 0.3s;
+    text-decoration: none;
+    font-size: 24px; /* Icon size */
+  }
+  
+  .call-button:hover {
+    background-color: #0077df; /* Change color on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .call-button {
+      right: 10px; /* Adjust position for smaller screens */
+      bottom: 70px; /* Adjust distance from bottom */
+      width: 45px;
+      height: 45px;
+      font-size: 20px; /* Reduce icon size on mobile */
+    }
+  }
+  

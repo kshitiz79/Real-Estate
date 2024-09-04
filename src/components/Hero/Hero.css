@@ -1,14 +1,27 @@
 .hero-wrapper {
-  color: white;
   position: relative;
   z-index: 1;
   padding-bottom: 2rem;
-  background: #290068;
+  overflow: hidden; /* Ensures no overflow issues */
 }
 
 .hero-container {
+  position: relative;
   justify-content: space-around;
   align-items: flex-end;
+  z-index: 2; /* Keep the content above the background slider */
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: sliderAnimation 20s infinite;
+  background-size: cover;
+  background-position: center;
 }
 
 /* Left side */
@@ -25,7 +38,7 @@
   font-weight: 600;
   font-size: 3.7rem;
   line-height: 4rem;
-  color: aquamarine;
+  color: rgb(255, 255, 255);
 }
 
 .orange-circle {
@@ -39,7 +52,9 @@
   border-radius: 50%; /* Make it a circle */
   clip-path: circle(50% at 50% 50%) inset(10% 20%);
 }
-
+.hero-right {
+  width: 30%;
+}
 .search-bar {
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
@@ -74,6 +89,63 @@
 .stat > :nth-child(1) > :last-child {
   color: orange;
 }
+/* Right side - Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 50rem; /* Adjusted max-width */
+  padding: 2rem; /* Reduced padding for better responsiveness */
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-form:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form input {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  width: 80%;
+}
+
+.contact-form input:focus {
+  border-color: #6200ea;
+  box-shadow: 0 0 8px rgba(98, 0, 234, 0.4);
+  outline: none;
+}
+
+.contact-form .button {
+  padding: 1rem;
+  background: linear-gradient(45deg, #6200ea, #0023e8);
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 80%;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 1rem;
+}
+
+.contact-form .button:hover {
+  background: linear-gradient(45deg, #df9f39, #ffdd00);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form .button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
 
 /* Right side */
 .image-container {
@@ -105,7 +177,9 @@
   .hero-container {
     margin-top: 2rem;
   }
-
+  .hero-right {
+    width: 50%;
+  }
   .hero-title > h1 {
     font-size: 2.5rem;
     line-height: 3rem;
@@ -128,5 +202,87 @@
 
   .stat > :nth-child(2) {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact-form {
+    padding: 1.5rem;
+    max-width: 90%;
+    border-radius: 20px;
+  }
+  .hero-right {
+    width: 60%;
+  }
+  .search-bar {
+    width: 100%; /* Ensure it stays consistent */
+    max-width: 30rem;
+  }
+  .contact-form input {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+    border-radius: 20px;
+  }
+
+  .contact-form .button {
+    padding: 0.9rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 1.2rem;
+    gap: 1.5rem;
+  }
+  .hero-right {
+    width: 100%;
+  }
+  .contact-form input {
+    font-size: 0.85rem;
+    padding: 0.7rem;
+  }
+
+  .contact-form .button {
+    padding: 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 1rem;
+    gap: 1rem;
+    border-radius: 15px;
+    width: 200%;
+  }
+
+  .contact-form input {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+    border-radius: 15px;
+  }
+
+  .contact-form .button {
+    padding: 0.7rem;
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes sliderAnimation {
+  0% {
+    background-image: url("./slider1.jpg");
+  }
+  25% {
+    background-image: url("./slider2.jpg");
+  }
+  50% {
+    background-image: url("./slider3.jpg");
+  }
+  75% {
+    background-image: url("./slider4.jpg");
+  }
+  100% {
+    background-image: url("./slider1.jpg");
   }
 }

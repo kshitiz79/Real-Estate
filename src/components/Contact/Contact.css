@@ -83,7 +83,7 @@
     color: white;
     transform: scale(1);
 }
-  
+
   
   @media (max-width: 1024px) {
     .contactModes {
@@ -109,5 +109,10 @@
       aspect-ratio: 1 / 1; /* Ensure the container remains square */
       border-radius: 10px; /* Optional: Adjust border radius */
       overflow: hidden; /* Ensure the content fits within the container */
+  }
+}
+@media (max-width: 1024px) {
+  .image-container2{
+    margin-top: 5rem;
   }
 }

@@ -1,0 +1,60 @@
+.video-section {
+    background-color: #290068; /* Light greenish background color */
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .video-heading {
+    font-size: 28px;
+    color: #fff; /* Dark green color for heading */
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .video-player {
+    width: 80%;
+    max-width: 800px;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .enquire-btn {
+    padding: 12px 24px;
+    background-color: #00aaff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+  }
+  
+  .enquire-btn:hover {
+    background-color: #366892;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .video-player {
+      width: 95%;
+    }
+  
+    .video-heading {
+      font-size: 24px;
+    }
+  
+    .enquire-btn {
+      width: 100%;
+      padding: 10px 0;
+    }
+  }
+  
