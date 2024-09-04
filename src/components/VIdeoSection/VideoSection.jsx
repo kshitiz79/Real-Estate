@@ -20,7 +20,7 @@ const VideoSection = () => {
     <section className="video-section">
       <h2 className="video-heading">#PropertyOrbits</h2>
       <div className="video-container">
-        <video controls className="video-player">
+        <video controls autoPlay muted className="video-player">
           <source src="video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>

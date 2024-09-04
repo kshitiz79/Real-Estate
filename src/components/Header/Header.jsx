@@ -55,6 +55,16 @@ const Header = () => {
     e.preventDefault();
     const formData = new FormData(e.target);
 
+    const getMenuStyles = () => {
+      if (window.innerWidth <= 768) {
+        return {
+          right: menuOpened ? "0" : "-100%", // This logic is now handled by adding/removing a class
+          transition: "right 200ms ease-in-out", // Smooth transition
+        };
+      }
+      return {};
+    };
+
     // Adding hidden fields for FormSubmit configuration
     formData.append('_next', 'https://yourdomain.co/thanks.html');
     formData.append('_subject', 'New Form Submission!');
@@ -86,17 +96,20 @@ const Header = () => {
         <img src="/logo.png" alt="logo" width={170} />
 
         <OutsideClickHandler onOutsideClick={() => setMenuOpened(false)}>
-          <div className="flexCenter h-menu" style={getMenuStyles()}>
-            <a href="#overview">Overview</a>
-            <a href="#popular">Popular</a>
-            <a href="#featured">Residency</a>
-            <a href="#contact">Contact Us</a>
+  <div
+    className={`flexCenter h-menu ${menuOpened ? 'show' : ''}`} // Toggle class to show or hide the menu
+    style={getMenuStyles()}
+  >
+    <a href="#overview">Overview</a>
+    <a href="#popular">Popular</a>
+    <a href="#featured">Residency</a>
+    <a href="#contact">Contact Us</a>
 
-            <button className="button" onClick={() => setFormVisible(true)}>
-              Contact
-            </button>
-          </div>
-        </OutsideClickHandler>
+    <button className="button" onClick={() => setFormVisible(true)}>
+      Contact
+    </button>
+  </div>
+</OutsideClickHandler>
 
         <div className="menu-icon" onClick={() => setMenuOpened((prev) => !prev)}>
           <BiMenuAltRight size={30} />
