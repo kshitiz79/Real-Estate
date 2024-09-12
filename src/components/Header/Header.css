@@ -35,7 +35,7 @@
 
 .h-menu > *:hover {
   cursor: pointer;
-  color: rgb(255, 191, 0); /* Add hover effect */
+
   transition: color 0.3s ease;
 }
 

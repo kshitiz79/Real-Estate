@@ -2,8 +2,10 @@ import React from "react";
 import "./Footer.css";
 import { IoCall } from "react-icons/io5";
 import { SiGmail } from "react-icons/si";
+import shareIcon from "../../../public/share.png";
 const Footer = () => {
   return (
+<>
     <div className="f-wrapper">
       <div className="paddings innerWidth flexCenter f-container">
         {/* left side */}
@@ -24,7 +26,41 @@ const Footer = () => {
 
         </div>
       </div>
+
     </div>
+    
+
+
+
+
+<div style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"space-around", backgroundColor:"white",fontWeight:"bold",color: 'black',height:'50px' }} >
+
+      <div >
+    <a   >
+  Copyright @ Property Orbits 2024
+
+  </a>
+  </div>
+  <div>
+  <a
+  href="https://rbshstudio.com"
+  className="threeDText"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Designed and Managed by RBSH Studio
+  <img
+    src={shareIcon}
+    alt="Share Icon"
+    style={{ width: '20px', height: '20px', marginLeft: '8px' }} // Adjust margin as needed
+  />
+</a>
+</div>
+
+    </div> 
+    
+</>
+
   );
 };
 
