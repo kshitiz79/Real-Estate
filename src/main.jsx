@@ -1,12 +1,33 @@
+// index.jsx or main.jsx
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import ErrorBoundary from "./components/ErrorBoundry/ErrorBoundry";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "./layout/Layout";
+import Thanks from "./pages/Thanks";
+
+// Define your router directly here
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '/',
+        element: <App />,
+      },
+      {
+        path: '/thanks',
+        element: <Thanks />,
+      },
+    ],
+  },
+]);
+
+// Wrap the RouterProvider around your app
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <ErrorBoundary>
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
-  </ErrorBoundary>
 );

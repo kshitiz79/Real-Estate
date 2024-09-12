@@ -1,0 +1,35 @@
+/* Thanks.css */
+.thanks-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Adjust to fill the viewport */
+  }
+  
+  .thanks-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/thanks.png'); /* Ensure this path is correct */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f0f0f0; /* Optional: fallback background color */
+  }
+  
+  .thanks-message {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Optional: add background for better text readability */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .thanks-main {
+      padding: 1rem;
+      background-size: contain;
+    }
+  }
+  
