@@ -15,30 +15,30 @@
   },
   {
     "name": "Princess Park",
-    "price": "starting from 1.8cr",
+    "price": "starting from 1cr",
     "detail": "Residential apartments located at Sector-6, Dwarka, New Delhi, offering modern amenities.",
     "link": "https://www.bptp.com/project/detail/princess-park",
     "image": "./princesspark.png"
   },
   {
     "name": "Gulistan Residency",
-    "price": "starting from 1.7cr",
+    "price": "starting from 1.1cr",
     "detail": "Luxury apartments in Sector-13, Dwarka, New Delhi with excellent connectivity.",
  
     "image": "./gulistan.png"
   },
   {
-    "name": "Solomon Heights",
-    "price": "starting from 1.6cr",
-    "detail": "Premium residential apartments located at Sector-19, Dwarka, New Delhi.",
+    "name": "Agarwal Associates",
+    "price": "starting from 1.2cr",
+    "detail": "10, New Rajdhani Enclave, Vikas Marg Delhi-110092",
     "link": "https://ithumworld.com/solomon-heights/",
-    "image": "./solomon.png"
+    "image": "./solomon.jpg"
   },
   {
-    "name": "Sarve Satyam Apartments",
-    "price": "Starting from 1.6cr",
-    "detail": "Well-connected apartments in Sector-4, Dwarka, New Delhi with modern facilities.",
+    "name": "Aditya World City ",
+    "price": "Starting from 1.3cr",
+    "detail": "Delhi Meeruth ExpressWay it is situated in the heart of City Apartments",
     "link": "https://ithumworld.com/sarve-satyam-apartments/",
-    "image": "./sarve-satyam.png"
+    "image": "./sarve-satyam.jpg"
   }
 ]

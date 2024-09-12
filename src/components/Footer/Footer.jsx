@@ -12,8 +12,16 @@ const Footer = () => {
         <div className="flexColStart f-left">
           <img src="./logo3.png" alt="" width={250} />
          
-          <span className="text  paddings">     <IoCall /> +91 9873961111
-          <br/><SiGmail /> sales@propertyorbits.com</span>
+          <span className="text paddings">
+  <a href="tel:+919873961111">
+    <IoCall /> +91 9873961111
+  </a>
+  <br />
+  <a href="mailto:sales@propertyorbits.com">
+    <SiGmail /> sales@propertyorbits.com
+  </a>
+</span>
+
          
         </div>
        
@@ -33,31 +41,27 @@ const Footer = () => {
 
 
 
-<div style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"space-around", backgroundColor:"white",fontWeight:"bold",color: 'black',height:'50px' }} >
-
-      <div >
-    <a   >
-  Copyright @ Property Orbits 2024
-
-  </a>
+    <div className="footer-container">
+  <div className="footer-left">
+    <a>© Property Orbits 2024</a>
   </div>
-  <div>
-  <a
-  href="https://rbshstudio.com"
-  className="threeDText"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Designed and Managed by RBSH Studio
-  <img
-    src={shareIcon}
-    alt="Share Icon"
-    style={{ width: '20px', height: '20px', marginLeft: '8px' }} // Adjust margin as needed
-  />
-</a>
+  <div className="footer-right">
+    <a
+      href="https://rbshstudio.com"
+      className="footer-link"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Designed and Managed by RBSH Studio
+      <img
+        src={shareIcon}
+        alt="Share Icon"
+        className="share-icon"
+      />
+    </a>
+  </div>
 </div>
 
-    </div> 
     
 </>
 
