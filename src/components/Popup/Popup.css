@@ -1,0 +1,130 @@
+.popup-overlay {
+  position: fixed;
+  top: 47%; /* Start positioning from the center */
+  left: 0;
+  width: 100%;
+  height: 100%; /* Set the popup to cover 65% of the screen */
+  transform: translateY(-40%); /* Center the popup vertically */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  overflow-y: auto;
+}
+
+.popup-content {
+ 
+  background: #6a0dad;
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  
+  overflow-y: auto; 
+  color:white;/* Add scroll for overflow if necessary */
+}
+
+.popup-title {
+  color: white; /* Make the text color white */
+  font-size: 24px; /* Optional: adjust the font size */
+  margin-bottom: 15px; /* Optional: add some margin below the title */
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.contact-options {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+
+
+.contact-option {
+  display: inline-block;
+  padding: 8px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.contact-option:hover {
+  background-color: #0056b3;
+}
+
+.site-visit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"],
+select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  color:white;
+}
+
+.submit-button {
+  padding: 8px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 768px) {
+  .popup-content {
+    max-width: 90%;
+    max-height: 80%; /* Ensure the popup doesn't take more than 80% of the screen */
+  }
+  .contact-options,
+  .site-visit-form {
+    gap: 5px; /* Reduce gap between form elements */
+  }
+
+  input[type="text"],
+  select,
+  .submit-button {
+    padding: 6px; /* Reduce padding for input fields and buttons */
+  }
+}
+
+
+@media (max-width: 480px) {
+  .popup-content {
+    max-width: 95%;
+    max-height: 80%; /* Ensure it fits the mobile view */
+    padding: 10px;
+  }
+
+  .close-popup {
+    font-size: 20px;
+  }
+}

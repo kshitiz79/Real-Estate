@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import {
   Accordion,
   AccordionItem,
@@ -14,28 +15,45 @@ import "./Value.css";
 
 const Value = () => {
   return (
-    <section id="value" className="v-wrapper">
+    <section id="value" className="v-wrapper" role="region" aria-label="Value section">
+      {/* Meta tags for SEO */}
+      <Helmet>
+        <title>Value We Provide - Trusted Real Estate Services | Property Orbits</title>
+        <meta
+          name="description"
+          content="Discover the value we provide at Property Orbits. Our mission is to help you find the perfect home that enhances your well-being and living experience."
+        />
+        <meta
+          name="keywords"
+          content="Property Orbits, real estate services, value, find home, trusted real estate, comfortable living"
+        />
+        <meta property="og:title" content="Value We Provide - Trusted Real Estate Services" />
+        <meta
+          property="og:description"
+          content="Discover the value we provide at Property Orbits. Our mission is to help you find the perfect home that enhances your well-being and living experience."
+        />
+        <meta property="og:url" content="https://propertyorbits.com/value" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://propertyorbits.com/path-to-your-image.jpg" />
+      </Helmet>
+
       <div className="paddings innerWidth flexCenter v-container">
         {/* left side */}
         <div className="v-left">
           <div className="image-container">
-            <img src="./value.png" alt="Value" />
+            <img src="./value.png" alt="Illustration representing the value we provide" />
           </div>
         </div>
 
         {/* right side */}
         <div className="flexColStart v-right">
-    
+          <h1 className="primaryText">Value We Provide to Our Customers</h1>
 
-          <span className="primaryText">Value We Give to You</span>
-
-          <span className="secondaryText">
-          Our goal is to assist you in finding the
-perfect place to call home.<br/> We
-understand that a comfortable living
-environment <br/> can positively impact
-your well-being.
-          </span>
+          <p className="secondaryText">
+            Our goal is to assist you in finding the perfect place to call home.
+            We understand that a comfortable living environment can positively impact
+            your well-being.
+          </p>
 
           <Accordion
             className="accordion"
@@ -56,9 +74,7 @@ your well-being.
                           >
                             {item.icon}
                           </div>
-                          <span className="primaryText2">
-                            {item.heading}
-                          </span>
+                          <h3 className="primaryText2">{item.heading}</h3>
                           <div className="flexCenter icon">
                             <MdOutlineArrowDropDown size={20} />
                           </div>

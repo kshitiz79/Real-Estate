@@ -11,13 +11,13 @@
 
 .overview-heading {
   position: absolute; /* Use absolute to position the heading within the section */
-  top: 20px; /* Place the heading 20px from the top of the section */
+ /* Place the heading 20px from the top of the section */
   left: 50%;
   transform: translateX(-50%);
-  text-align: center;
+
   font-size: 36px;
   color: #290068;
-  margin-bottom: 20px;
+  margin-bottom: 750px;
   z-index: 10; /* Ensure it appears above other content */
 }
 

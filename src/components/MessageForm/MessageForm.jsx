@@ -1,5 +1,4 @@
-
-import './MessageForm.css';
+import "./MessageForm.css";
 import emailjs from "@emailjs/browser";
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -13,7 +12,7 @@ const MessageForm = ({ isOpen, onClose }) => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
 
     emailjs
       .sendForm("service_8tpkzl5", "template_xsqdxx8", form.current, {
@@ -22,16 +21,15 @@ const MessageForm = ({ isOpen, onClose }) => {
       .then(
         () => {
           navigate("/thanks");
-          setLoading(false)
+          setLoading(false);
           console.log("SUCCESS!");
         },
         (error) => {
-          setLoading(false)
+          setLoading(false);
           console.log("FAILED...", error.text);
         }
       );
   };
-
 
   return (
     <div className="message-form-overlay">
@@ -44,32 +42,36 @@ const MessageForm = ({ isOpen, onClose }) => {
         </div>
         <h2 className="form-title">Get in touch with us</h2>
         <form ref={form} onSubmit={sendEmail}>
- 
           <input
-              type="text"
-              placeholder="Enter your name"
-              required
-               className="form-input"
-              name="from_name"
-            />
-            <input
-              type="phone"
-              placeholder="Enter your number"
-              required
-               className="form-input"
-              name="from_number"
-            />
-            <input
-              placeholder="Enter your City"
-              required
-               className="form-input"
-              type="text"
-              name="city"
-            />
+            type="text"
+            placeholder="Name"
+            required
+            className="form-input"
+            name="from_name"
+          />
+          <input
+            type="phone"
+            placeholder="Number"
+            required
+            className="form-input"
+            name="from_number"
+          />
+          <input
+            placeholder="Mail"
+            required
+            className="form-input"
+            type="text"
+            name="city"
+          />
 
+        
 
-      
-          <input disabled={loading}  className="form-submit-btn" type="submit" value="Send" />
+          <input
+            disabled={loading}
+            className="form-submit-btn"
+            type="submit"
+            value="Send"
+          />
         </form>
       </div>
     </div>

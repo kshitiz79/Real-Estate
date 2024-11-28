@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet'; // Import Helmet for SEO metadata
 import './Overview.css'; // Import the CSS file for styling
 import MessageForm from '../MessageForm/MessageForm'; // Import the MessageForm component
 
@@ -45,24 +46,60 @@ const Overview = () => {
   };
 
   return (
-    <section className="overview" ref={sectionRef}>
-      <h1 className="overview-heading">Overview</h1>
-      <div className="content" ref={contentRef}>
-        <h2>Refresh. Recharge. Revive.</h2>
-        <p>
-          We are delighted to unveil <strong>Signum Parkwoods Estate Phase – II</strong> with exceptional amenities that offer a perfect blend of tranquility and modern convenience situated at the heart of <strong>Mankundu – Chandannagar</strong>. Enjoy a wealth of amenities, that include a Lifestyle Club, AC Gym, Steam Bath, Children’s Play Area, Swimming Pool, Amphitheatre, and a lot more.
-        </p>
-        <p>
-          Discover a vibrant community designed to enhance your quality of life, surrounded by serene landscapes and contemporary comforts. Secure your dream home in Signum Parkwoods Phase II today.
-        </p>
-        <button className="download-btn" onClick={handleDownloadClick}>Download Brochure</button>
-      </div>
-      <div className="image-container5" ref={imageRef}>
-        <img src="r1.png" alt="Signum Parkwoods" className="overview-image" />
-      </div>
-      {/* Conditionally render MessageForm when showMessageForm is true */}
-      {showMessageForm && <MessageForm isOpen={showMessageForm} onClose={handleCloseForm} />}
-    </section>
+    <>
+      <Helmet>
+        <title>Prateek Grand City - Rejuvenate. Recharge. Reimagine.</title>
+        <meta 
+          name="description" 
+          content="Step into the world of Prateek Grand City, a modern township blending elegance and tranquility in Siddharth Vihar, Ghaziabad. Explore luxurious amenities including gardens, clubhouse, and more." 
+        />
+        <meta 
+          name="keywords" 
+          content="Prateek Grand City, township in Ghaziabad, luxury residential property, modern amenities, lush green landscapes, Siddharth Vihar real estate" 
+        />
+        <meta name="author" content="Prateek Group" />
+        <meta 
+          property="og:title" 
+          content="Prateek Grand City - Modern Township in Ghaziabad" 
+        />
+        <meta 
+          property="og:description" 
+          content="Discover Prateek Grand City, a thoughtfully designed township offering luxurious amenities in Siddharth Vihar, Ghaziabad." 
+        />
+        <meta 
+          property="og:image" 
+          content="https://prateekgroup.com/images/prateek-grand-city-township-aerial-view.jpg" 
+        />
+        <meta 
+          property="og:url" 
+          content="https://prateekgroup.com/prateek-grand-city" 
+        />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
+      <section className="overview" ref={sectionRef}>
+        <h1 className="overview-heading">Overview</h1>
+        <div className="content" ref={contentRef}>
+          <h2>Rejuvenate. Recharge. Reimagine.</h2>
+          <p>
+            Step into the world of <strong>Prateek Grand City,</strong> a thoughtfully designed township that blends modern elegance with natural tranquility, situated in Siddharth Vihar, Ghaziabad. Indulge in a range of luxurious amenities including landscaped gardens, a clubhouse, swimming pool, fitness center, and dedicated children’s play areas.
+          </p>
+          <p>
+            Embrace a vibrant lifestyle surrounded by lush greenery and contemporary conveniences, providing you with the perfect escape to refresh your mind and body. Discover your dream home at Prateek Grand City and experience a new standard of living.
+          </p>
+          <button className="download-btn" onClick={handleDownloadClick}>Download Brochure</button>
+        </div>
+        <div className="image-container5" ref={imageRef}>
+          <img 
+            src="r5.png" 
+            alt="Aerial view of Prateek Grand City Township" 
+            className="overview-image" 
+          />
+        </div>
+        {/* Conditionally render MessageForm when showMessageForm is true */}
+        {showMessageForm && <MessageForm isOpen={showMessageForm} onClose={handleCloseForm} />}
+      </section>
+    </>
   );
 };
 

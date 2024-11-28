@@ -9,10 +9,7 @@ const Thanks = () => {
     <div className="thanks-container">
       <Header />
       <main className="thanks-main">
-        <div className="thanks-message">
-          <h1>Thank You!</h1>
-          <p>We appreciate your feedback and support.</p>
-        </div>
+        
       </main>
       <Footer />
     </div>
@@ -20,3 +17,4 @@ const Thanks = () => {
 };
 
 export default Thanks;
+

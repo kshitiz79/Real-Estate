@@ -4,7 +4,7 @@ import "./Hero.css";
 import { HiLocationMarker } from "react-icons/hi";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
-
+import { Helmet } from "react-helmet";
 import emailjs from "@emailjs/browser";
 
 const Hero = () => {
@@ -12,6 +12,7 @@ const Hero = () => {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+  const form = useRef();
 
   const handleSearch = () => {
     if (location.trim()) {
@@ -23,24 +24,19 @@ const Hero = () => {
     }
   };
 
-  const form = useRef();
-
   const sendEmail = (e) => {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
 
     emailjs
-      .sendForm("service_8tpkzl5", "template_xsqdxx8", form.current, {
-        publicKey: "cOgeWE_ZecC61i1YX",
-      })
+      .sendForm("service_8tpkzl5", "template_xsqdxx8", form.current, "cOgeWE_ZecC61i1YX")
       .then(
         () => {
-          navigate("/thanks");
-          setLoading(false)
-          console.log("SUCCESS!");
+          setLoading(false);
+          navigate("/thanks"); // Redirect to thank-you page
         },
         (error) => {
-          setLoading(false)
+          setLoading(false);
           console.log("FAILED...", error.text);
         }
       );
@@ -48,6 +44,21 @@ const Hero = () => {
 
   return (
     <section className="hero-wrapper">
+      <Helmet>
+        <title>Discover Your Dream Home | Property Orbits</title>
+        <meta
+          name="description"
+          content="Explore premium ready-to-move-in flats starting at 1.5 cr. Choose from multiple flat types and get in touch with us to find your dream home."
+        />
+        <meta name="keywords" content="Ready to move-in flats, 1.5 cr flats, premium real estate, home buying, real estate in cities" />
+        <meta property="og:title" content="Discover Your Dream Home | Property Orbits" />
+        <meta property="og:description" content="Find your ideal home with Property Orbits. Browse through our extensive listings of premium and affordable properties tailored to your needs." />
+        <meta property="og:image" content="https://propertyorbits.com/images/hero-og-image.jpg" />
+        <meta name="twitter:title" content="Discover Your Dream Home | Property Orbits" />
+        <meta name="twitter:description" content="Find your ideal home with Property Orbits. Browse through our extensive listings of premium and affordable properties tailored to your needs." />
+        <meta name="twitter:image" content="https://propertyorbits.com/images/hero-twitter-image.jpg" />
+      </Helmet>
+
       <div className="hero-background"></div>
 
       <div className="paddings innerWidth flexCenter hero-container">
@@ -65,7 +76,6 @@ const Hero = () => {
               Ready to Move-In <br /> Flats in 1.5cr
             </motion.h1>
           </div>
-          <div className="flexColStart hero-des "></div>
           <div className="flexCenter search-bar">
             <HiLocationMarker color="var(--blue)" size={25} />
             <input
@@ -100,28 +110,32 @@ const Hero = () => {
           </div>
         </div>
 
+
         {/* Right side - Form */}
         <div className="flexCenter hero-right">
           <form ref={form} className="contact-form" onSubmit={sendEmail}>
             <h2>Get in Touch With Us</h2>
             <input
-              type="text"
+              type="tex"
               placeholder="Enter your name"
               required
               name="from_name"
             />
             <input
-              type="phone"
+              type="tel"
               placeholder="Enter your number"
               required
               name="from_number"
+              pattern="[0-9]{10}"
             />
             <input
-              placeholder="Enter your City"
+              placeholder="Email"
               required
-              type="text"
+               type="email"
               name="city"
             />
+           
+      
             <input disabled={loading} className="button" type="submit" value="Send" />
           </form>
         </div>

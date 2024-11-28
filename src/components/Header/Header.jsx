@@ -8,36 +8,24 @@ const Header = () => {
   const [formVisible, setFormVisible] = useState(false);
   const [sticky, setSticky] = useState(false);
 
-  // Function to handle sticky state based on scroll position
+  // Handle sticky navbar on scroll
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setSticky(true);
-      } else {
-        setSticky(false);
-      }
+      setSticky(window.scrollY > 100);
     };
-
     window.addEventListener('scroll', handleScroll);
-
-    // Cleanup function to remove the scroll listener
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Function to dynamically adjust menu styles based on screen size and state
+  // Adjust menu styles dynamically
   const getMenuStyles = () => {
-    if (window.innerWidth <= 768) {
-      return {
-        right: menuOpened ? "0" : "-100%",
-        transition: "right 200ms ease",
-      };
-    }
-    return {};
+    return window.innerWidth <= 768 ? {
+      right: menuOpened ? "0" : "-100%",
+      transition: "right 200ms ease-in-out",
+    } : {};
   };
 
-  // Close the menu on resize if window width exceeds 768px
+  // Handle window resize for mobile menu
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
@@ -45,76 +33,58 @@ const Header = () => {
       }
     };
     window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Handle form submission
+  // Form submission handler
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-
-    const getMenuStyles = () => {
-      if (window.innerWidth <= 768) {
-        return {
-          right: menuOpened ? "0" : "-100%", // This logic is now handled by adding/removing a class
-          transition: "right 200ms ease-in-out", // Smooth transition
-        };
-      }
-      return {};
-    };
-
-    // Adding hidden fields for FormSubmit configuration
+    
+    // Append form details for form submission service
     formData.append('_next', 'https://yourdomain.co/thanks.html');
     formData.append('_subject', 'New Form Submission!');
     formData.append('_captcha', 'false');
     formData.append('_autoresponse', 'Thank you for reaching out! We\'ll get back to you soon.');
-    formData.append('_cc', 'teamrbsh@gmail.com'); 
+    formData.append('_cc', 'teamrbsh@gmail.com');
 
     fetch('https://formsubmit.co/sales@propertyorbits.com', {
       method: 'POST',
       body: formData,
-    })
-      .then((response) => {
-        if (response.ok) {
-          alert('Form submitted successfully!');
-          setFormVisible(false);
-        } else {
-          alert('There was an error submitting the form.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error submitting form:', error);
-        alert('There was an error submitting the form.');
-      });
+    }).then((response) => {
+      if (response.ok) {
+        alert('Form submitted successfully!');
+        setFormVisible(false);
+      } else {
+        alert('Error submitting the form.');
+      }
+    }).catch((error) => {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting the form.');
+    });
   };
 
   return (
     <header className={`h-wrapper ${sticky ? 'sticky' : ''}`}>
-      <div className="flexCenter paddings innerWidth h-container">
-        <img src="/logo.png" alt="logo" width={170} />
+      <nav className="flexCenter paddings innerWidth h-container">
+        <a href="/" aria-label="Home">
+          <img src="/logo.png" alt="RBSH Studio Logo" width={170} loading="lazy" />
+        </a>
 
         <OutsideClickHandler onOutsideClick={() => setMenuOpened(false)}>
-  <div
-    className={`flexCenter h-menu ${menuOpened ? 'show' : ''}`} // Toggle class to show or hide the menu
-    style={getMenuStyles()}
-  >
-    <a href="#overview">Overview</a>
-    <a href="#popular">Popular</a>
-    <a href="#featured">Residency</a>
-    <a href="#contact">Contact Us</a>
-
-    <button className="button" onClick={() => setFormVisible(true)}>
-      Contact
-    </button>
-  </div>
-</OutsideClickHandler>
+          <div className={`flexCenter h-menu ${menuOpened ? 'show' : ''}`} style={getMenuStyles()}>
+            <a href="#overview" aria-label="Overview Section">Overview</a>
+            <a href="#popular" aria-label="Popular Section">Popular</a>
+            <a href="#featured" aria-label="Residency Section">Residency</a>
+            <a href="#contact" aria-label="Contact Us Section">Contact Us</a>
+            <button className="button" onClick={() => setFormVisible(true)}>Contact</button>
+          </div>
+        </OutsideClickHandler>
 
         <div className="menu-icon" onClick={() => setMenuOpened((prev) => !prev)}>
-          <BiMenuAltRight size={30} />
+          <BiMenuAltRight size={30} aria-label="Toggle Menu" />
         </div>
-      </div>
+      </nav>
 
       {formVisible && (
         <div className="popup-form">
@@ -124,15 +94,15 @@ const Header = () => {
                 <h2>Get in Touch With Us</h2>
                 <label>
                   Name:
-                  <input type="text" name="name" required />
+                  <input type="text" name="name" required aria-label="Name" />
                 </label>
                 <label>
                   Number:
-                  <input type="text" name="number" required />
+                  <input type="text" name="number" required aria-label="Number" />
                 </label>
                 <label>
                   Requirement:
-                  <select name="requirement" required>
+                  <select name="requirement" required aria-label="Requirement">
                     <option value="">Select Flat Type</option>
                     <option value="1bhk">1BHK</option>
                     <option value="2bhk">2BHK</option>

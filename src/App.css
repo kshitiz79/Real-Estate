@@ -2,6 +2,7 @@
 .App{
     position: relative;
     overflow-x: clip;
+    scroll-behavior: smooth;
   }
   .App>:nth-child(1)
   {

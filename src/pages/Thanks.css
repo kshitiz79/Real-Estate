@@ -10,11 +10,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/thanks.png'); /* Ensure this path is correct */
+    background-image: url('./thanks.png'); /* Ensure this path is correct */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #f0f0f0; /* Optional: fallback background color */
+    background-color: #f0f0f0; 
+    width: 100vw; /* Ensure it takes full width */
+    height: 100vh;
+    /* Optional: fallback background color */
   }
   
   .thanks-message {
@@ -28,8 +31,6 @@
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .thanks-main {
-      padding: 1rem;
-      background-size: contain;
+        background-size: cover; /* Make it cover the screen on mobile */
     }
-  }
-  
+}

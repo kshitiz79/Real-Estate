@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import './FeaturedProperties.css';
 import data from '../../utils/slider2.json';
-import MessageForm from '../MessageForm/MessageForm'; // Import the MessageForm component
+import Popup from './../Popup/Popup'; // Import the Popup component
 
 const FeaturedProperties = () => {
-  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [selectedProperty, setSelectedProperty] = useState(null);
 
-  // Function to open the MessageForm
-  const handleCardClick = () => {
-    setIsFormOpen(true);
+  // Function to handle card click and open popup
+  const handleCardClick = (property) => {
+    setSelectedProperty(property); // Set the selected property
   };
 
-  // Function to close the MessageForm
-  const handleCloseForm = () => {
-    setIsFormOpen(false);
+  // Function to close the popup
+  const handleClosePopup = () => {
+    setSelectedProperty(null); // Deselect property to close popup
   };
 
   return (
@@ -23,16 +23,18 @@ const FeaturedProperties = () => {
           <span className="orangeText">Top Picks</span>
           <span className="primaryText">Featured Properties</span>
         </div>
+
         <div className="property-grid">
           {data.map((property, index) => (
             <div
               key={index}
               className="property-card"
               style={{ '--card-index': index }}
-              onClick={handleCardClick} // Open the form on card click
+              onClick={() => handleCardClick(property)} // Open Popup on card click
             >
               <img src={property.image} alt={property.name} />
               <span className="secondaryText property-price">
+              <h1 className="hidden-h1">Leading Real Estate Broker in Noida - Find Verified Properties</h1>
                 <span style={{ color: 'orange' }}>Rs </span>
                 <span>{property.price}</span>
               </span>
@@ -43,8 +45,13 @@ const FeaturedProperties = () => {
         </div>
       </div>
 
-      {/* Render the MessageForm component */}
-      <MessageForm isOpen={isFormOpen} onClose={handleCloseForm} />
+      {/* Conditionally render Popup when a property is selected */}
+      {selectedProperty && (
+        <Popup 
+          property={selectedProperty} 
+          onClose={handleClosePopup} // Close the popup when needed
+        />
+      )}
     </section>
   );
 };

@@ -1,0 +1,51 @@
+/* Privacy.css */
+.privacy-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: white;
+    line-height: 1.6;
+  }
+  
+  h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+  /* No top margin for the first heading */
+  }
+  
+  h2 {
+    font-size: 1.5em;
+    color: #444;
+    margin-top: 30px; /* Adds space above each section heading */
+    margin-bottom: 15px;
+  }
+  
+  p, ul, li {
+    font-size: 1em;
+    color: #555;
+  }
+  
+  p {
+    margin-top: 15px; /* Adds space above each paragraph */
+    margin-bottom: 15px; /* Adds space below each paragraph */
+  }
+  
+  ul {
+    padding-left: 20px;
+    list-style-type: disc;
+    margin-top: 15px; /* Adds space above the list */
+    margin-bottom: 15px; /* Adds space below the list */
+  }
+  
+  ul li {
+    margin-top: 5px; /* Adds space between list items */
+  }
+  
+  address {
+    font-style: normal;
+    margin-top: 20px; /* Adds space above the address */
+  }
+  

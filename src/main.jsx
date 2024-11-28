@@ -6,7 +6,8 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Thanks from "./pages/Thanks";
-
+import Privacy from "./pages/Privacy";
+import { HelmetProvider } from 'react-helmet-async';
 // Define your router directly here
 const router = createBrowserRouter([
   {
@@ -21,13 +22,22 @@ const router = createBrowserRouter([
         path: '/thanks',
         element: <Thanks />,
       },
+      {
+        path: '/privacy-policy',
+        element: <Privacy />,
+
+      },
     ],
   },
 ]);
 
 // Wrap the RouterProvider around your app
 ReactDOM.createRoot(document.getElementById("root")).render(
+  
   <React.StrictMode>
-    <RouterProvider router={router} />
+     <HelmetProvider>
+     <RouterProvider router={router} />
+     </HelmetProvider>
+   
   </React.StrictMode>
 );

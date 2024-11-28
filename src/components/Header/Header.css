@@ -1,11 +1,11 @@
-/* Header Styles */
 .h-wrapper {
   position: sticky; /* Ensures the header stays fixed on top while scrolling */
   top: 0; /* Sets the sticky position to the top of the viewport */
   z-index: 1000; /* High z-index to ensure the header stays on top */
   width: 100%; /* Ensures the header spans the full width */
   background: white; /* Sets the background color to white */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for better visibility */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  transition: right 200ms ease-in-out;/* Adds a subtle shadow for better visibility */
 }
 .h-wrapper.sticky {
   position: fixed; /* Keeps the header fixed at the top */
@@ -13,7 +13,8 @@
   z-index: 1000; /* Ensures the header stays above other elements */
   width: 100%;
   background: white; /* Keeps the background visible */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  transition: right 200ms ease-in-out;/* Optional: adds a subtle shadow */
 }
 .h-container {
   padding-top: 1rem;
@@ -24,6 +25,7 @@
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  transition: right 200ms ease-in-out;
 }
 
 .h-menu {
@@ -32,11 +34,15 @@
   align-items: center;
   transition: right 200ms ease-in-out; /* Add transition for smooth sliding */
 }
+a[aria-label]:hover {
+  cursor: pointer;
+  color: #333; /* Change color on hover */
+}
 
 .h-menu > *:hover {
   cursor: pointer;
 
-  transition: color 0.3s ease;
+  transition: color 30s ease;
 }
 
 .menu-icon {
